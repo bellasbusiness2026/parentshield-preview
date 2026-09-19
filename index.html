@@ -21,163 +21,97 @@
     color: var(--navy);
     line-height: 1.5;
   }
-  .app {
-    display: flex;
-    min-height: 100vh;
-  }
+  .app { display: flex; min-height: 100vh; }
   .rail {
     width: 240px;
     background: var(--navy);
     color: var(--cream);
     padding: 28px 18px;
     flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
   }
-  .brand {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-  }
-  .brand small {
-    display: block;
-    font-size: 12px;
-    color: #c9d2e6;
-    font-family: system-ui, sans-serif;
-    font-weight: 400;
-    margin-top: 4px;
-  }
+  .brand { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .brand small { display: block; font-size: 12px; color: #c9d2e6; font-family: system-ui, sans-serif; font-weight: 400; margin-top: 4px; }
   .nav-item {
-    display: block;
-    width: 100%;
-    text-align: left;
-    background: transparent;
-    border: none;
-    color: #d7deee;
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-family: system-ui, sans-serif;
-    font-size: 15px;
-    cursor: pointer;
-    margin-bottom: 4px;
+    display: block; width: 100%; text-align: left; background: transparent; border: none;
+    color: #d7deee; padding: 12px 14px; border-radius: 10px; font-family: system-ui, sans-serif;
+    font-size: 15px; cursor: pointer; margin-bottom: 4px;
   }
   .nav-item:hover { background: rgba(255,255,255,0.08); }
-  .nav-item.active {
-    background: rgba(201,138,58,0.18);
-    color: #fff;
-    border-left: 3px solid var(--amber);
-  }
-  .main {
-    flex: 1;
-    padding: 40px 48px;
-    max-width: 920px;
-  }
-  .eyebrow {
-    font-family: system-ui, sans-serif;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 10px;
-  }
-  h1 {
-    font-size: 38px;
-    line-height: 1.15;
-    margin: 0 0 8px;
-    font-weight: 700;
-  }
-  .tagline {
-    font-size: 18px;
-    color: var(--navy-soft);
-    margin: 0 0 28px;
-    font-style: italic;
-  }
-  .progress {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 28px;
-    font-family: system-ui, sans-serif;
-    font-size: 13px;
-  }
-  .progress span {
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: #fff;
-    border: 1px solid var(--line);
-    color: var(--muted);
-  }
+  .nav-item.active { background: rgba(201,138,58,0.18); color: #fff; border-left: 3px solid var(--amber); }
+  .main { flex: 1; padding: 40px 48px; max-width: 920px; }
+  .eyebrow { font-family: system-ui, sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  h1 { font-size: 38px; line-height: 1.15; margin: 0 0 8px; font-weight: 700; }
+  .tagline { font-size: 18px; color: var(--navy-soft); margin: 0 0 28px; font-style: italic; }
+  .progress { display: flex; gap: 8px; margin-bottom: 28px; font-family: system-ui, sans-serif; font-size: 13px; flex-wrap: wrap; }
+  .progress span { padding: 6px 12px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--muted); }
   .progress span.done { background: var(--navy); color: #fff; border-color: var(--navy); }
   .progress span.current { background: var(--amber); color: #fff; border-color: var(--amber); }
-  .card {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 22px 24px;
-    margin-bottom: 18px;
-  }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; margin-bottom: 18px; }
   .card h2 { margin: 0 0 6px; font-size: 20px; }
-  .card p { margin: 0; color: var(--navy-soft); }
+  .card p { margin: 0 0 10px; color: var(--navy-soft); }
   .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
-  .choice {
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 18px;
-    background: var(--cream);
-    cursor: pointer;
-    transition: border-color .15s, transform .15s;
-  }
+  .choice { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: var(--cream); cursor: pointer; transition: border-color .15s, transform .15s; }
   .choice:hover { border-color: var(--amber); transform: translateY(-1px); }
   .choice b { display: block; font-size: 16px; margin-bottom: 4px; }
   .choice span { font-size: 13px; color: var(--muted); font-family: system-ui, sans-serif; }
-  .btn {
-    display: inline-block;
-    background: var(--navy);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 14px 22px;
-    font-family: system-ui, sans-serif;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 8px;
-  }
-  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn { display: inline-block; background: var(--navy); color: #fff; border: none; border-radius: 10px; padding: 14px 22px; font-family: system-ui, sans-serif; font-size: 15px; cursor: pointer; margin-top: 8px; text-decoration: none; }
+  .btn:hover { background: var(--navy-soft); }
   .btn.secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
-  .section-label {
-    font-family: system-ui, sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--muted);
-    margin: 26px 0 10px;
-  }
+  .btn.secondary:hover { background: rgba(27,42,74,0.06); }
+  .btn.amber { background: var(--amber); }
+  .section-label { font-family: system-ui, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 26px 0 10px; }
   .tool-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .tool {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 16px;
-  }
+  .tool { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
   .tool b { display: block; font-size: 15px; margin-bottom: 4px; }
   .tool span { font-size: 12px; color: var(--muted); font-family: system-ui, sans-serif; }
   .muted { color: var(--muted); font-size: 14px; }
   .page { display: none; }
   .page.active { display: block; }
-  .placeholder {
-    background: #fff;
-    border: 1px dashed var(--line);
-    border-radius: 14px;
-    padding: 40px;
-    text-align: center;
-    color: var(--muted);
-    font-family: system-ui, sans-serif;
-  }
+  .story p { margin: 0 0 14px; color: var(--navy-soft); }
+  .donate-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
+  .donate { border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: var(--cream); text-decoration: none; color: inherit; }
+  .donate b { display: block; font-size: 18px; color: var(--navy); }
+  .donate span { font-size: 13px; color: var(--muted); font-family: system-ui, sans-serif; }
+  .wall { margin-top: 14px; }
+  .wall-tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .wall-tab { font-family: system-ui, sans-serif; font-size: 13px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--navy-soft); }
+  .wall-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .wall-input { width: 100%; min-height: 90px; border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-family: Georgia, serif; font-size: 15px; resize: vertical; }
+  .wall-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-family: system-ui, sans-serif; font-size: 12px; color: var(--muted); }
+  .wall-list { margin-top: 16px; }
+  .wall-item { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; font-size: 14px; }
+  .wall-item .tag { font-family: system-ui, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--amber); }
+  .ask-list { display: grid; gap: 8px; margin-top: 14px; }
+  .ask-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; cursor: pointer; }
+  .ask-item:hover { border-color: var(--amber); }
+  .ask-item b { font-size: 15px; }
+  .ask-item span { font-size: 13px; color: var(--muted); font-family: system-ui, sans-serif; }
+  .ask-item .arrow { color: var(--amber); font-size: 18px; }
+  .door-script { background: var(--cream); border-left: 3px solid var(--amber); padding: 14px 16px; border-radius: 0 10px 10px 0; font-style: italic; margin: 12px 0; }
+  .rights-list { list-style: none; padding: 0; margin: 12px 0; }
+  .rights-list li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .rights-list li:before { content: attr(data-k); position: absolute; left: 0; color: var(--amber); font-weight: 700; font-family: system-ui, sans-serif; }
+  .statute { font-size: 12px; color: var(--muted); font-family: system-ui, sans-serif; }
+  .footer-note { font-size: 12px; color: var(--muted); font-family: system-ui, sans-serif; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .check-list { list-style: none; padding: 0; margin: 12px 0; }
+  .check-list li { padding: 6px 0 6px 26px; position: relative; font-size: 14px; }
+  .check-list li:before { content: "○"; position: absolute; left: 0; color: var(--muted); }
+  .check-list li.done:before { content: "✓"; color: var(--navy); }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-family: system-ui, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; }
+  .field input, .field select { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-family: Georgia, serif; font-size: 15px; background: #fff; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   @media (max-width: 760px) {
     .app { flex-direction: column; }
-    .rail { width: 100%; display: flex; overflow-x: auto; gap: 6px; padding: 12px; }
+    .rail { width: 100%; height: auto; position: relative; display: flex; overflow-x: auto; gap: 6px; padding: 12px; }
     .brand { display: none; }
     .nav-item { margin: 0; white-space: nowrap; }
     .main { padding: 24px 18px; }
-    .choices, .tool-grid { grid-template-columns: 1fr; }
+    .choices, .tool-grid, .donate-grid, .two-col { grid-template-columns: 1fr; }
     h1 { font-size: 28px; }
   }
 </style>
@@ -185,7 +119,7 @@
 <body>
 <div class="app">
   <aside class="rail">
-    <div class="brand">ParentShield<small>Texas DFPS &amp; CPS Legal Advocate</small></div>
+    <div class="brand">ParentShield<small>Texas DFPS & CPS Legal Advocate</small></div>
     <button class="nav-item active" data-page="home">Home</button>
     <button class="nav-item" data-page="door">Door</button>
     <button class="nav-item" data-page="record">Record</button>
@@ -200,7 +134,7 @@
     <section class="page active" id="home">
       <div class="eyebrow">Start here</div>
       <h1>Slow is a strategy.<br>The burden is theirs.</h1>
-      <p class="tagline">You don't have to figure this out alone or all at once.</p>
+      <p class="tagline">A first-contact buffer for a Texas DFPS or CPS investigation. You do not have to rush, explain, or fill the silence.</p>
 
       <div class="progress">
         <span class="current">Start</span>
@@ -223,17 +157,41 @@
 
       <div class="section-label">Your tools</div>
       <div class="tool-grid">
-        <div class="tool"><b>Letters</b><span>Draft and send</span></div>
-        <div class="tool"><b>Law</b><span>Your rights</span></div>
-        <div class="tool"><b>Clocks</b><span>Deadlines</span></div>
-        <div class="tool"><b>Plan</b><span>Next steps</span></div>
+        <div class="tool" onclick="go('ask')" style="cursor:pointer"><b>Letters</b><span>Draft and send</span></div>
+        <div class="tool" onclick="go('ask')" style="cursor:pointer"><b>Law</b><span>Your rights</span></div>
+        <div class="tool" onclick="go('record')" style="cursor:pointer"><b>Clocks</b><span>Deadlines</span></div>
+        <div class="tool" onclick="go('record')" style="cursor:pointer"><b>Plan</b><span>Next steps</span></div>
+      </div>
+
+      <div class="section-label">Keep on any device</div>
+      <p class="muted">Open in any browser. Save it on the phone. Safari, Chrome, Firefox, Edge, Samsung Internet. Then put it on the Home Screen so you do not hunt for a tab at the door.</p>
+      <p class="muted">1. Android: tap Install, or Chrome menu → Install app / Add to Home screen.<br>2. iPhone: open this same page in Safari → Share → Add to Home Screen.<br>3. Computer: Install if offered, or download the file and open it in any browser.</p>
+      <p class="muted">The file works offline in any browser. On a phone, Home Screen is more reliable than a Downloads folder. Not Guest. Notes stay in that browser profile.</p>
+
+      <div class="section-label">If they are here</div>
+      <div class="card">
+        <h2>Open Door. Read the card. Do not improvise.</h2>
+        <p>After they leave, write who they were and whether they gave the § 261.307 notice. That is their burden, recorded.</p>
+        <button class="btn" onclick="go('door')">Door card</button>
+        <p class="muted" style="margin-top:10px">On this device. No facts yet.</p>
+      </div>
+
+      <div class="section-label">Two observable facts after a contact</div>
+      <div class="card">
+        <p>Not feelings. Not a theory of the case.</p>
+        <button class="btn secondary" onclick="go('record')">Start a log</button>
       </div>
 
       <div class="section-label">On this device</div>
-      <p class="muted">Everything you enter stays on this device. Nothing is sent anywhere unless you choose to share it.</p>
+      <p class="muted">Everything you enter stays on this device. Nothing is sent anywhere unless you choose to share it. Your notes never leave this device unless you copy them.</p>
 
       <div class="section-label">Share this page</div>
-      <button class="btn secondary" onclick="alert('Share link copied — preview only')">Copy link</button>
+      <button class="btn secondary" onclick="copyLink()">Copy link</button>
+
+      <div class="section-label">On this phone</div>
+      <p class="muted">Works in any browser. On a phone, add it to the Home Screen. On a computer, download ParentShield.html and open the file. Notes stay in that browser profile. Clear this device.</p>
+
+      <div class="footer-note">ParentShield is an on-device case buffer. It is not a law firm, not legal advice, and not a court filing. Citations are to the Texas Family Code as amended in 2023 (including H.B. 730 and H.B. 63).</div>
     </section>
 
     <!-- DOOR -->
@@ -247,16 +205,59 @@
         <span>Respond</span>
         <span>Done</span>
       </div>
+
+      <div class="card">
+        <h2>First contact — Tex. Fam. Code § 261.307</h2>
+        <p>The department must identify itself, give you a written summary, and tell you your verbal rights. You do not have to fill the silence.</p>
+        <p class="statute">Status: <span id="door-status">Not set</span></p>
+        <button class="btn" onclick="setDoor('here')">They are here</button>
+        <button class="btn secondary" onclick="setDoor('left')" style="margin-left:8px">They left</button>
+      </div>
+
+      <div class="card">
+        <h2>Script to say</h2>
+        <div class="door-script" id="door-script">"I am not consenting to entry. I am not answering questions without counsel. Please give me the written summary required by Texas Family Code section 261.307, including the known allegations, and leave your name and identification. I will record this contact."</div>
+        <button class="btn" onclick="copyText('door-script')">Copy the script</button>
+        <button class="btn secondary" onclick="alert('Saved to this device — preview')" style="margin-left:8px">Save to Files</button>
+        <button class="btn secondary" onclick="window.print()" style="margin-left:8px">Print this card</button>
+      </div>
+
+      <div class="card">
+        <h2>What they must give you</h2>
+        <ul class="rights-list">
+          <li data-k="1">A brief written summary in a language you understand</li>
+          <li data-k="2">How DFPS investigates, including when it would ask a court to remove a child</li>
+          <li data-k="3">That every report is sent to law enforcement</li>
+          <li data-k="4">That anything you say may be used against you — in a criminal case, to remove a child, or to terminate parental rights</li>
+          <li data-k="5">Your rights to complain, review records (with limits), and seek counsel</li>
+          <li data-k="6">The verbal rights listed below</li>
+          <li data-k="7">The known allegations DFPS is investigating</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Your verbal rights — § 261.307(a)(2)</h2>
+        <ul class="rights-list">
+          <li data-k="A">Do not speak without counsel: Refuse to speak with any DFPS agent unless legal counsel is present.</li>
+          <li data-k="B">Assistance from an attorney: Right to receive assistance from an attorney.</li>
+          <li data-k="C">Appointed counsel in some suits: If you cannot afford a lawyer and DFPS seeks a court order under § 262.101, § 262.105, or required services under § 264.203, you may have court-appointed attorney.</li>
+          <li data-k="D">Record the contact: May record any interaction or interview; recording may be disclosed under court order.</li>
+          <li data-k="E">Refuse entry without a court order: May refuse entry to home or interview child without court order.</li>
+          <li data-k="F">Counsel before entry or interview: May have legal counsel present before allowing entry or interview.</li>
+          <li data-k="G">Withhold medical records consent: May withhold consent to release of medical or mental health records.</li>
+          <li data-k="H">Withhold exam consent: May withhold consent to any medical or psychological examination of the child.</li>
+          <li data-k="I">Refuse a drug test: May refuse to submit to a drug test.</li>
+          <li data-k="J">Counsel before a safety plan: May consult with legal counsel before agreeing to any proposed voluntary safety plan.</li>
+        </ul>
+      </div>
+
       <div class="card">
         <h2>One next step</h2>
         <p>Log the visit now, while it's fresh. You can add details later.</p>
         <button class="btn" onclick="go('record')">Log this visit</button>
-        <button class="btn secondary" style="margin-left:8px" onclick="alert('Rights preview — coming soon')">What are my rights right now?</button>
       </div>
-      <div class="card">
-        <h2>Texas DFPS buffer</h2>
-        <p>They generally must have a court order or your consent to enter. Tap to read the statute.</p>
-      </div>
+
+      <div class="footer-note">On this device only. Not legal advice. Not a substitute for a licensed Texas attorney.</div>
     </section>
 
     <!-- RECORD -->
@@ -270,36 +271,122 @@
         <span>Respond</span>
         <span>Done</span>
       </div>
+
       <div class="card">
-        <h2>Log an entry</h2>
-        <p>Three fields. That's it. Date, what happened, who was there.</p>
-        <button class="btn" onclick="alert('Entry form — preview only')">Add entry</button>
+        <h2>Log an entry — two facts</h2>
+        <p>What was seen or heard, in one sentence each. Not feelings. Not a theory of the case. Press Ctrl+Enter to save.</p>
+        <div class="two-col">
+          <div class="field"><label>Fact one — what you saw or heard</label><input id="fact1" placeholder="One observable fact" onkeydown="if(event.ctrlKey&&event.key==='Enter')addEntry()"></div>
+          <div class="field"><label>Fact two — what you saw or heard</label><input id="fact2" placeholder="One observable fact" onkeydown="if(event.ctrlKey&&event.key==='Enter')addEntry()"></div>
+        </div>
+        <button class="btn" onclick="addEntry()">Add entry</button>
       </div>
+
+      <div class="card">
+        <h2>Identity (optional — not recorded by default)</h2>
+        <div class="two-col">
+          <div class="field"><label>Investigator</label><input placeholder="Name"></div>
+          <div class="field"><label>Identification</label><input placeholder="Badge / ID number"></div>
+          <div class="field"><label>Supervisor</label><input placeholder="Name"></div>
+          <div class="field"><label>Office</label><input placeholder="Office / unit"></div>
+          <div class="field"><label>County</label><input placeholder="County"></div>
+          <div class="field"><label>Case number</label><input placeholder="Case number"></div>
+        </div>
+        <div class="two-col" style="margin-top:12px">
+          <div class="field"><label>Court order shown</label><select><option>Unsure</option><option>Yes</option><option>No</option></select></div>
+          <div class="field"><label>Written § 261.307 summary given</label><select><option>Unsure</option><option>Yes</option><option>No</option></select></div>
+          <div class="field"><label>Verbal rights given</label><select><option>Unsure</option><option>Yes</option><option>No</option></select></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Clocks — legal timelines</h2>
+        <div class="two-col">
+          <div class="field"><label>Possession date</label><input type="date"></div>
+          <div class="field"><label>Adversary hearing not later than</label><input type="date"></div>
+          <div class="field"><label>TMC date</label><input type="date"></div>
+          <div class="field"><label>Status hearing not later than</label><input type="date"></div>
+          <div class="field"><label>One-year dismissal</label><input type="date"></div>
+          <div class="field"><label>60-day dismissal notice</label><input type="date"></div>
+          <div class="field"><label>Hearing on calendar</label><input type="date"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Encounters logged</h2>
+        <div id="encounters"><p class="muted">None logged.</p></div>
+      </div>
+
+      <div class="card">
+        <h2>Hearing prep checklist</h2>
+        <ul class="check-list" id="prep-list">
+          <li>Petition, affidavit, and every order are in one stack</li>
+          <li>Counsel is confirmed, or I asked the court for appointed counsel</li>
+          <li>Door card shows whether they gave § 261.307 notice</li>
+          <li>Two-fact log is current — no extra story</li>
+          <li>Photo or copy of any court order they showed</li>
+          <li>I can say whether the child may have Native American heritage</li>
+          <li>Names of relatives or others who can take the child if asked</li>
+          <li>I will not testify or explain without counsel</li>
+        </ul>
+      </div>
+
       <div class="card">
         <h2>Progress</h2>
         <p>✓ Logged &nbsp; ○ Sent &nbsp; ○ Printed &nbsp; ○ Shared</p>
+        <button class="btn" onclick="alert('Sealed packet copied — preview')">Copy sealed packet</button>
+        <button class="btn secondary" onclick="alert('Saved to this device — preview')" style="margin-left:8px">Save to Files</button>
+        <button class="btn secondary" onclick="window.print()" style="margin-left:8px">Print packet</button>
       </div>
+
+      <div class="footer-note">On this device only. Not legal advice. Not a substitute for a licensed Texas attorney. Data is stored in a "PARENTSHIELD CASE BUFFER" on this device.</div>
     </section>
 
     <!-- ASK -->
     <section class="page" id="ask">
       <div class="eyebrow">Ask</div>
-      <h1>Questions, answered plainly.</h1>
-      <div class="placeholder">Ask interface — preview placeholder. Short, adult answers. No toy language.</div>
+      <h1>The advocate</h1>
+      <p class="tagline">Local answers. Nothing you type here is sent anywhere. Pick a situation, or describe it in a few words.</p>
+      <div class="ask-list" id="ask-list"></div>
+      <div class="footer-note">On this device only. Not legal advice. Not a substitute for a licensed Texas attorney.</div>
     </section>
 
     <!-- FROM OTHER FAMILIES -->
     <section class="page" id="families">
-      <div class="eyebrow">From Other Families</div>
-      <h1>What others went through.</h1>
-      <div class="placeholder">Stories and comments from other families — preview placeholder.</div>
+      <div class="eyebrow">From other families</div>
+      <h2>Comments, suggestions, stories.</h2>
+      <p class="muted">Leave a note for the next parent. This wall is public. It is not your case file. Do not write children's names, case numbers, investigator names, addresses, or what happened in the home.</p>
+      <div class="wall">
+        <div class="wall-tabs">
+          <button class="wall-tab active" onclick="setWallTab('comment',this)">Comment</button>
+          <button class="wall-tab" onclick="setWallTab('suggestion',this)">Suggestion</button>
+          <button class="wall-tab" onclick="setWallTab('story',this)">Success story</button>
+        </div>
+        <textarea class="wall-input" id="wall-input" placeholder="Write your note here..." maxlength="800"></textarea>
+        <div class="wall-meta"><span id="wall-count">0 / 800</span><button class="btn" onclick="postWall()">Post to the wall</button></div>
+        <div class="wall-list" id="wall-list"><p class="muted">No notes yet. If this tool helped you slow down at the door, say so without naming anyone.</p></div>
+      </div>
+      <div class="footer-note">On this device only. Not legal advice. Not a substitute for a licensed Texas attorney.</div>
     </section>
 
     <!-- OPTIONAL SUPPORT -->
     <section class="page" id="support">
-      <div class="eyebrow">Optional Support</div>
-      <h1>Help, if you want it.</h1>
-      <div class="placeholder">Optional support resources — preview placeholder. Content TBD.</div>
+      <div class="eyebrow">Optional support</div>
+      <h1>Keep families equipped. Keep them together.</h1>
+      <div class="story">
+        <p><b>I was that parent.</b></p>
+        <p>I built ParentShield from my own experiences, and from witnessing what other parents go through. When they came, I was oblivious. I did not know the notice I was owed, the right to stay silent, or that slow is a strategy. They had the playbook. I had the shaking hands.</p>
+        <p>This exists so you are a step ahead of a corrupt system that counts on that panic. Stay calm. Write two facts. Make them accountable. Instead of them shaking you at the door, the anxiety belongs on their side of the porch. The burden is theirs.</p>
+        <p>ParentShield stays free. A donation is never required. Optional support pays for upgrades so more families can stand at the door prepared — not bullied into filling the silence — and so parents and their children can stay together.</p>
+      </div>
+      <div class="donate-grid">
+        <a class="donate" href="https://donate.stripe.com/test_14A00igzAbq63isabAaAw00" target="_blank" rel="noopener"><b>$5</b><span>A late night of updates</span></a>
+        <a class="donate" href="https://donate.stripe.com/test_cNibJ05UWgKqbOY6ZoaAw01" target="_blank" rel="noopener"><b>$15</b><span>A week of keeping this free</span></a>
+        <a class="donate" href="https://donate.stripe.com/test_aFa4gy1EG3XEcT20B0aAw02" target="_blank" rel="noopener"><b>$40</b><span>The next family gets a card</span></a>
+        <a class="donate" href="https://donate.stripe.com/test_7sYeVc1EGgKq3is6ZoaAw03" target="_blank" rel="noopener"><b>Any amount</b><span>Choose what you can</span></a>
+      </div>
+      <p class="muted" style="margin-top:14px">Opens Stripe. Not a paywall. Case notes never go with the payment.</p>
+      <div class="footer-note">ParentShield is an on-device case buffer. It is not a law firm, not legal advice, and not a court filing. Citations are to the Texas Family Code as amended in 2023 (including H.B. 730 and H.B. 63).</div>
     </section>
 
   </main>
@@ -315,11 +402,115 @@
   }
   nav.forEach(n => n.addEventListener('click', () => go(n.dataset.page)));
   function choosePath(path) {
-    // Preview: just route to the matching tool
     if (path === 'door') go('door');
     else if (path === 'letter') go('record');
     else if (path === 'hearing') go('record');
     else go('ask');
+  }
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link copied.');
+  }
+  function copyText(id) {
+    const t = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(t);
+    alert('Copied.');
+  }
+  function setDoor(s) {
+    document.getElementById('door-status').innerText = s === 'here' ? 'They are here' : 'They left';
+  }
+  const askItems = [
+    ["Someone is at my door","A DFPS or CPS worker is here now.","at-the-door"],
+    ["They want to come inside","The investigator asked to enter, look around, or 'just come in for a minute.'","they-want-in"],
+    ["They said I have to","They used have-to language. I have not seen a judge's signature.","voluntary-or-order"],
+    ["They want to question me","They want my side, a statement, or a 'quick conversation.'","questions"],
+    ["They want to interview my child","They asked to speak with my child at home, at school, or in the car.","talk-to-child"],
+    ["Law enforcement is with them","Officers came with the investigator, or are in the driveway.","officers"],
+    ["They want me to sign","A form, release, plan, or 'acknowledgment' is on the clipboard.","sign-this"],
+    ["They want a drug test","They asked me to test today, at a clinic, or on the spot.","drug-test"],
+    ["They did not give me papers","No written summary, no allegations, no rights card.","no-papers"],
+    ["They offered a safety plan","A plan to stay elsewhere, supervise visits, or 'keep everyone safe for now.'","safety-plan"],
+    ["They say they will take my child","Removal, 'we have to take them,' or an emergency claim.","they-want-to-remove"],
+    ["The 14-day hearing is coming","A child was taken, or a suit was filed, and a hearing is on the calendar.","adversary-hearing"],
+    ["A year is running","The court named DFPS temporary managing conservator.","year-clock"],
+    ["The child may be Native","Someone asked about Indian heritage, or I think ICWA might apply.","native-child"],
+    ["They left a card or called later","A voicemail, a card in the door, a text, a 'please call me back.'","left-a-card"],
+    ["I already talked, or I let them in","The contact already happened. I am trying not to make it worse.","already-spoke"],
+    ["How do I get a lawyer","I do not have counsel yet.","lawyer"]
+  ];
+  const askList = document.getElementById('ask-list');
+  askItems.forEach(([title, sub, key]) => {
+    const d = document.createElement('div');
+    d.className = 'ask-item';
+    d.innerHTML = '<div><b>'+title+'</b><br><span>'+sub+'</span></div><span class="arrow">›</span>';
+    d.onclick = () => showAskAnswer(key, title);
+    askList.appendChild(d);
+  });
+  const askAnswers = {
+    "at-the-door": "Stay calm. Do not open the door wide. Ask for the written summary required by § 261.307. You do not have to let them in without a court order. You do not have to answer questions without counsel. Read the Door card and use the script.",
+    "they-want-in": "You may refuse entry without a court order. Say: 'I am not consenting to entry.' Ask them to slide the written summary under the door or through a gap. Record the contact if you can.",
+    "voluntary-or-order": "If you have not seen a judge's signature, it is voluntary. You can say no. 'Have to' language does not create a legal obligation. Ask for the court order in writing.",
+    "questions": "You may refuse to answer without counsel present. 'I am not answering questions without counsel.' Anything you say may be used against you in a criminal case, to remove a child, or to terminate parental rights.",
+    "talk-to-child": "You may refuse an interview of your child without a court order. You may have counsel present. Do not send the child out alone.",
+    "officers": "Officers do not automatically give DFPS authority to enter. Ask whether they have a warrant. Without a warrant signed by a judge, you may still refuse entry. Stay calm and record.",
+    "sign-this": "Do not sign anything without counsel. A signature can waive rights or agree to a safety plan. Ask for a copy, take it, and consult a lawyer before signing.",
+    "drug-test": "You may refuse a drug test. 'I am not submitting to a drug test.' Refusing is your right. Do not be pressured into it on the spot.",
+    "no-papers": "If they gave no written summary, no allegations, and no rights card, they have not met § 261.307. Ask for it. Record that it was not provided. That is their burden.",
+    "safety-plan": "You may consult legal counsel before agreeing to any voluntary safety plan. Do not sign on the spot. 'I will consult with counsel before agreeing to any plan.'",
+    "they-want-to-remove": "Removal requires a court order except in narrow emergency circumstances. Ask for the order. If they claim emergency, ask what the emergency is and record it. Get counsel immediately.",
+    "adversary-hearing": "The adversary hearing must happen not later than 14 days after removal. Prepare: stack the petition, affidavit, and every order. Confirm counsel. Review the two-fact log. Do not testify without counsel.",
+    "year-clock": "When DFPS is named temporary managing conservator, a one-year dismissal clock runs. Track the date. The first Monday after the anniversary is the outside date. Missing it can end the case.",
+    "native-child": "If the child may have Native American heritage, ICWA may apply and change the process. Tell your lawyer immediately. Do not guess — ask.",
+    "left-a-card": "A card, voicemail, or text is still contact. Do not call back without counsel. Record the date, time, and what it said. Ask for the written summary in writing.",
+    "already-spoke": "It is not too late. Stop talking now. Write down what you said, when, and to whom. Get counsel. Do not try to 'fix' it by explaining more.",
+    "lawyer": "Ask the court for appointed counsel if you cannot afford one — especially if DFPS seeks a court order. You can also contact Texas Legal Services Center Family Helpline or a family law attorney experienced in CPS cases."
+  };
+  function showAskAnswer(key, title) {
+    const a = askAnswers[key] || "Short, adult answer coming. On this device only.";
+    alert(title + "\n\n" + a);
+  }
+  let wallTab = 'comment';
+  let wallNotes = [];
+  function setWallTab(t, el) {
+    wallTab = t;
+    document.querySelectorAll('.wall-tab').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+  const wallInput = document.getElementById('wall-input');
+  wallInput.addEventListener('input', () => {
+    document.getElementById('wall-count').innerText = wallInput.value.length + ' / 800';
+  });
+  function postWall() {
+    const v = wallInput.value.trim();
+    if (!v) return;
+    wallNotes.unshift({type: wallTab, text: v});
+    wallInput.value = '';
+    document.getElementById('wall-count').innerText = '0 / 800';
+    renderWall();
+  }
+  function renderWall() {
+    const list = document.getElementById('wall-list');
+    if (wallNotes.length === 0) {
+      list.innerHTML = '<p class="muted">No notes yet. If this tool helped you slow down at the door, say so without naming anyone.</p>';
+      return;
+    }
+    list.innerHTML = wallNotes.map(n => '<div class="wall-item"><span class="tag">'+n.type+'</span><br>'+n.text.replace(/</g,'<')+'</div>').join('');
+  }
+  let entries = [];
+  function addEntry() {
+    const f1 = document.getElementById('fact1').value.trim();
+    const f2 = document.getElementById('fact2').value.trim();
+    if (!f1 && !f2) return;
+    const now = new Date().toLocaleString();
+    entries.push({t: now, f1: f1, f2: f2});
+    document.getElementById('fact1').value = '';
+    document.getElementById('fact2').value = '';
+    renderEntries();
+  }
+  function renderEntries() {
+    const e = document.getElementById('encounters');
+    if (entries.length === 0) { e.innerHTML = '<p class="muted">None logged.</p>'; return; }
+    e.innerHTML = entries.map((x,i) => '<div class="wall-item"><span class="tag">Entry '+(i+1)+' · '+x.t+'</span><br><b>Fact 1:</b> '+x.f1.replace(/</g,'<')+'<br><b>Fact 2:</b> '+x.f2.replace(/</g,'<')+'</div>').join('');
   }
 </script>
 </body>
